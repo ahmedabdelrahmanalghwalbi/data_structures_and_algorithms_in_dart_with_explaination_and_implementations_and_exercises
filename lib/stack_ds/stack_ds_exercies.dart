@@ -1,0 +1,34 @@
+import 'package:ds_algorithms/stack_ds/stack_ds.dart';
+
+void reverseListByUsingStack(List<dynamic> elements) {
+  MyCustomStack mStack = MyCustomStack.of(elements);
+  //we override .toString() that reversed stack and print it
+  print(mStack.toString());
+}
+
+bool checkBalanceOfTheParanthese(String str) {
+  List<String> paranthese = [];
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] == '(' || str[i] == ')') {
+      paranthese.add(str[i]);
+    }
+  }
+  if (paranthese.isEmpty) {
+    return false;
+  }
+  if (paranthese.length.isOdd) {
+    return false;
+  }
+  MyCustomStack<String> mStack = MyCustomStack<String>.of(paranthese);
+  for (var i = 0; i < (paranthese.length / 2); i++) {
+    String s1 = mStack.pop();
+    String s2 = mStack.pop();
+    print("test $s1  ===  $s2 ==== $i === ${paranthese.length}");
+    if ((s1 == '(' || s1 == ')') && (s2 == '(' || s2 == ')') && s1 != s2) {
+      continue;
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
