@@ -2,6 +2,9 @@
 // if you are substitute any type with one of its subtypes the behavior should not change.
 //معناه ان لو عندي كلاسين الاب والابن والابن وارث من الاب فلازم يكون للإبن القدرة علي تنيذ كل الخصائص للاب .
 //بمعني عندي كلاس الاب بيعمل شاي فلازم لما اطلب من الابن شاي ميقةليش مش هعرف ... لازم يعرف يعمل شاي زي ابوه
+//The Liskov Substitution Principle (LSP) states that objects of a superclass should be able to be replaced with objects of a subclass
+//without affecting the correctness of the program. In other words,
+//a subclass should be able to replace its superclass without breaking the code
 
 //-------------------------------------BEFORE LSP
 class UploadFileService {
