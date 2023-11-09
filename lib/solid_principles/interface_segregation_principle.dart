@@ -124,3 +124,23 @@ class PaymentAndroidIos implements GooglePaymentI, ApplePaymentI {
     // TODO: implement payWithApplePay
   }
 }
+
+///////////vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrrrryyyyyyyyyyyy important note
+/// الانترفيس عادي يعمل امبليمنت لانترفيس اخر او اكتر من انترفيس
+abstract class PaymentWithAppleAndGoogle
+    implements GooglePaymentI, ApplePaymentI {}
+
+class paymentWithAppleAndGoogleEx implements PaymentWithAppleAndGoogle {
+  @override
+  void payWithApplePay() {
+    // TODO: implement payWithApplePay
+  }
+
+  @override
+  void payWithGooglePay() {
+    // TODO: implement payWithGooglePay
+  }
+}
+///////////vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrrrryyyyyyyyyyyy important note
+///ملحوظة هامة اخري : لو عندي انترفيس عامل امبليمنت لانترفيس او اكتر فمش هيرمي الايرور بتاع اني لازم اعمل افرريد للميثودز اللي داحل الانترفيسيس اللي معمولها امبيليمنتت من الانترفيسالانترفيس زي [PaymentWithAppleAndGoogle]
+//[PaymentWithAppleAndGoogle] interface not throwed error to override implemeneted interfaces methods.
