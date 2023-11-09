@@ -110,3 +110,17 @@ class CreditPaymentAfterISP implements CrieditPayment {
     // TODO: implement paymentWithCriedit
   }
 }
+
+//هنا بقي لو عاوز استخدم الدفع بالبل مع الدفع بجوجل
+//هعمل امبليمنت للي محتاجة برضو
+class PaymentAndroidIos implements GooglePaymentI, ApplePaymentI {
+  @override
+  void payWithGooglePay() {
+    // TODO: implement payWithGooglePay
+  }
+
+  @override
+  void payWithApplePay() {
+    // TODO: implement payWithApplePay
+  }
+}
