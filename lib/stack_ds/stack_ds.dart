@@ -10,9 +10,40 @@
 
 //                               **** Implementation ****
 class MyCustomStack<T> {
+  //this anotation is available (:) for private members
   MyCustomStack() : _storage = <T>[];
   List<T> _storage;
-
+  //The alternative
+  //also we can use this constractor
+  //MyCustomStack(this._storage) ;
+  //List<T> _storage = <T>[];
+  //we can use both of those declarations to identify private params inside constractor
+  //   class Student{
+  //   var _id;
+  //   var _name;
+  //   Student({this._id, this._name}); // error
+  //   void set id(int id) => _id = id;
+  //   void set name(String name) => _name = name;
+  // }
+  ////////////////////////////////////////////////
+  //   class Student{
+  //   var _id;
+  //   var _name;
+  //   Student({int id, String name}) : _id = id, _name = name;
+  //   void set id(int id) => _id = id;
+  //   void set name(String name) => _name = name;
+  // }
+  //////////////////////////////////////////////
+  /*class Animal {
+  String _name;
+  int _age;
+  }
+  class Dog extends Animal {
+    String _race;
+    Dog(String name, int age, {String? race}) : _race = race ?? "Wild", super(name, age);
+  }
+*/
+///////////////////////////////////////////////
   @override
   String toString() {
     return '---> top of the stack \n'
@@ -41,4 +72,3 @@ class MyCustomStack<T> {
 // const listChars = ['a', 'h', 'm', 'e', 'd'];
 // final iterableToStack = Stack.of(listChars);
 // iterableToStack.pop();
- 

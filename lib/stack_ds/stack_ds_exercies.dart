@@ -1,9 +1,12 @@
 import 'package:ds_algorithms/stack_ds/stack_ds.dart';
 
 void reverseListByUsingStack(List<dynamic> elements) {
-  MyCustomStack mStack = MyCustomStack.of(elements);
-  //we override .toString() that reversed stack and print it
-  print(mStack.toString());
+  List<String> names = ['a', 'b', 'c'];
+  MyCustomStack<String> s = MyCustomStack<String>.of(names);
+  List<String> reversedNames = [];
+  for (int i = 0; i < names.length; i++) {
+    reversedNames.add(s.pop());
+  }
 }
 
 bool checkBalanceOfTheParanthese(String str) {
