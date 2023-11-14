@@ -39,5 +39,29 @@ methods implement the required behavior of a class.
 -----------
 Messages are the communication mechanism between objects.
  
- 
+////////////////////////////////////////////////////////////////////////////////
+8- POLYMORPHISM (many forms)
+____________________________
+  first polymorphism type : Method overloading (static / compile time polymorphism)
+  second polymorphism type : (runtime polymorphism)
+  third polymorphisim type : an object can be addresses as either parent type or child /sub type.
+           ======= ======= ======= ====== =========
+8-1 - Method Overloading (NOT SUPPORTING IN DART) :- 
+------------------------------------------------ 2 methods with same but differ in number of parametares or types of parameters 
+for example:
+  add (int x, int y)
+  add (double x, double y)
+  add (int x , double y)
+  add(double x, int y)
+  add (int x, int y , int y)
+
+8-2 - Method Overriding :-
+------------------------ A method overrides the imlementation of a method in a parent class
+
+8-3 - Referencing Objects:-
+for example:
+  Bus b = new RahatBus()
+  //its allow becouse rahatBus extends or implement from bus
+  List<String> list = new ArrayList<String>
+  //its allow becouse ArrayList implements from List Interface
  */
