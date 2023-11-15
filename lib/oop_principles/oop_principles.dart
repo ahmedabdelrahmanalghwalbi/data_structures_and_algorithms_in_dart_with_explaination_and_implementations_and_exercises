@@ -64,4 +64,36 @@ for example:
   //its allow becouse rahatBus extends or implement from bus
   List<String> list = new ArrayList<String>
   //its allow becouse ArrayList implements from List Interface
+
+//////////////////////////////////////////////////////////////////////////////
+9- Abstractactions (abstract classes) :-
+-------------------------------------
+- when we need in out design a class that only created for inheritancec puposes and can't be instantiated ( معناه اني بحتاج الكلاس ده عشان اورث منه سوار امبليمينت او اكستند ومش محتاج اعرف منه اوبجكتس )
+- enforce subclasses to implement abstract methods in the base class.
+- All classes that inherites from abstract class must implement (override) all abstract methods in that base class.
+- مفهوم الابستراكت كلاس عموما هو اني اعمل منه وراثة واني مقدرش اخد منه اوبجكت
+- One class can inherit from only one class (in many languages as dart becouse it not suppot multiple inheritance)
+9-1- abstract method:- Method without implementation (in dart we decfined abstract methods that the method with no implementation and without abstract keyword).
+Example of abstract methods in interface:-
+----------------------------------------
+//iterface
+abstract class MyCustomInterface{
+  //abstract method (that i defined it without implementation and not defined it with abstract keyword)
+  void getName();
+  //abstract method (that i defined it without implementation and not defined it with abstract keyword)
+  void getAge(String gender);
+} 
+////////////////////////////////////////////////////////////////////////////////
+10- Interfaces:
+---------------
+- like 100% abstract with all the methods abstract (methods that defined as abstract and have no implementation)
+- الانترفيس هو هو الابستراكت كلاس بس كل الميثودس اللي فيه ابستراكت ومش معول لاي واحدة فيهم امبليمينت .
+- all classes implements the interface must implement (like override) all methods on the interface .
+- all methods are abstract and ca'nt have implementation>
+- classess can implement multiple interfaces>
+- Add/Enforce/Describe behaviors to other classess / types.
+- Note :-
+-------- في لغات برمجة مش بتتعدم ال المالتبل انهيرتنس زي الدرات (يعني مقدرش اعمل اكستند لاكتر من اب  )
+بس اقدر اعمل امبليمنت لاكتر من انترفيس عادي (يعني اعمل امبليمنت لاكتر من اب عادي )
+
  */
