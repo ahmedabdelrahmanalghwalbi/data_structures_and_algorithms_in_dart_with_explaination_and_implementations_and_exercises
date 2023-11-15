@@ -66,7 +66,7 @@ for example:
   //its allow becouse ArrayList implements from List Interface
 
 //////////////////////////////////////////////////////////////////////////////
-9- Abstractactions (abstract classes) :-
+9- abstract classes :-
 -------------------------------------
 - when we need in out design a class that only created for inheritancec puposes and can't be instantiated ( معناه اني بحتاج الكلاس ده عشان اورث منه سوار امبليمينت او اكستند ومش محتاج اعرف منه اوبجكتس )
 - enforce subclasses to implement abstract methods in the base class.
@@ -95,5 +95,11 @@ abstract class MyCustomInterface{
 - Note :-
 -------- في لغات برمجة مش بتتعدم ال المالتبل انهيرتنس زي الدرات (يعني مقدرش اعمل اكستند لاكتر من اب  )
 بس اقدر اعمل امبليمنت لاكتر من انترفيس عادي (يعني اعمل امبليمنت لاكتر من اب عادي )
+
+////////////////////////////////////////////////////////////////////////////////
+11- Abstraction :-
+---------------
+11-1- abstraction is hiding details for whom should not know , or don't care, about (or) Make only required details to be publicly available>
+
 
  */
