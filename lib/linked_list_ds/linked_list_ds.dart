@@ -142,5 +142,63 @@ Expample of the calling of those method to adding node after certain node:-
 1- PUSH ==> O (1)
 2- APPEND ==> O (1)
 3- INSERT AFTER NODE ==> O (1)
-4- NODE AT (that i use before INSERT AT) ==> O(N) where n is the index of the node that i wand to add new node after it . 
+4- NODE AT (that i use before INSERT AT) ==> O(N) where n is the index of the node that i wand to add new node after it. 
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+Removing Values From a List :-
+----------------------------
+There are three main operations for removing nodes:
+1. pop: Removes the value at the front of the list.
+2. removeLast: Removes the value at the end of the list.
+3. removeAfter: Removes the value after a particular node in the list.
+----------------------------------------------------------------------
+1-Popping From the Front of a List:-
+-----------------------------------
+E? pop() {
+  final value = head?.value;
+  head = head?.next;
+  if (isEmpty) {
+    tail = null;
+  }
+  return value;
+}
+
+2-Removing From the End of a List :-
+-----------------------------------
+
+E? removeLast() {
+  // 1 - check if linked list only contains the head of list then i will use pop() method>
+  if (head?.next == null) return pop();
+  // 2 - take temp from head of the linked list and looping untill the next of the current node == tail
+  var current = head;
+  while (current!.next != tail) {
+    current = current.next;
+  }
+  // 3 - if i reach to the node that before tail then i will make the next of it refere to null and reset tail to the new tail (node before the old tail)
+  final value = tail?.value;
+  tail = current;
+  tail?.next = null;
+  return value;
+}
+
+3-Removing a Value From the Middle of a List (much like insertAfter) :
+-------------------------------------------------------------------
+1- first i will search on the specific node that i want to remove the node before it.
+2- once i get the node (using nodeAt() method) just easly skip the node after it that i want to delete it by make it (node.next == node.next.next)  
+E? removeAfter(Node<E> node) {
+  final value = node.next?.value;
+  if (node.next == tail) {
+    tail = node;
+  }
+  //skip easy 
+  node.next = node.next?.next;
+  return value;
+}
+
+---------------------------------------------------------------------
+1- pop ==> O (1)
+2- RemoveLast ==> O (n) ==> becouse , i looping in the linked list untill reached to the node previouse tail and make it next to null and assert it to be a new tail 
+3- Remove the next node  ==> O (1)
+4- NODE AT (that i use before INSERT AT) ==> O(N) where n is the index of the node that i wand to add new node after it.
+
 */
