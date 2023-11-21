@@ -201,4 +201,113 @@ E? removeAfter(Node<E> node) {
 3- Remove the next node  ==> O (1)
 4- NODE AT (that i use before INSERT AT) ==> O(N) where n is the index of the node that i wand to add new node after it.
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+Making a List Iterable :-
+-------------------------
+1- i want to appling looping on linked list >
+2- if i try to looping now on my custom linked list , i will get this error
+
+  final list = LinkedList<int>();
+  list.push(3);
+  list.push(2);
+  list.push(1);
+  for (final element in list) {
+    print(element);
+  }
+output ==> error message ==> The type 'LinkedList<int>' used in the 'for' loop must implement Iterable.
+
+3- The reason that you can loop through various collections in Dart is because they
+   implement the Iterable interface. You can do the same to make LinkedList iterable.
+NOTE:
+----->    Note: Rather than extending Iterable, you could have also implemented it.
+----->    However, the abstract Iterable class contains a lot of default logic that you
+----->    would have to rewrite yourself if you had used the implement keyword. By
+----->    using extends, you only need to implement iterator.
+          ----------------------------------------------------------------------
+4- the solve of the issue of iterable of the linked list that i made my custom linked list inhierit (or) extend from ( Iterable ) interface:-
+ 1 - class LinkedList<E> extends Iterable<E> { ....... }
+
+ 2 - then override on iterator getter :-
+  @override
+  // TODO: implement iterator
+  Iterator<E> get iterator => throw UnimplementedError();
+ 
+ 3 - Since Iterable also includes isEmpty, add the @override annotation above your isEmpty getter. It should look like so now:
+  @override
+  bool get isEmpty => head == null;
+ 
+ 4 -  What’s an Iterator? :- An iterator tells an iterable class how to move through its elements. To make an iterator,
+      you create a class that implements the Iterator interface. This abstract class has the following simple form:
+  abstract class Iterator<E> {
+    E get current; // -> refers to the current element in the collection as you are iterating through it. According to Iterator semantics,
+                         current is undefined until you’ve called moveNext at least once.
+    bool moveNext(); // -> updates the new value of current, so it’s your job here to point to whatever item is next in the list. Returning false from this method means that
+    you’ve reached the end of the list. After that point, you should consider current undefined again
+  
+  } -----> i don’t need to write that yourself. It’s already included in Dart
+ 
+ 5 - Creating an Iterator: i can make one yourself. Create the following incomplete class below LinkedList:
+
+  class _LinkedListIterator<E> implements Iterator<E> {
+    _LinkedListIterator(LinkedList<E> list) : _list = list;
+    final LinkedList<E> _list; //-> pass in a reference to the linked list so that the iterator has something to work with.
+    Node<E>? _currentNode;
+    
+    @override
+    E get current => _currentNode!.value;
+
+    bool _firstPass = true;
+    @override
+    bool moveNext() {
+      // 1 :-If the list is empty, then there’s no need to go any further. Let the iterable know
+      //    that there are no more items in this collection by returning false.
+    if (_list.isEmpty) return false;
+      // 2 :-Since _currentNode is null to start with, you need to set it to head on the first
+      //    pass. After that just point it to the next node in the chain.
+    if (_firstPass) {
+    _currentNode = _list.head;
+    _firstPass = false;
+    } else {
+    _currentNode = _currentNode?.next;
+    }
+    // 3 :- Returning true lets the iterable know that there are still more elements, but when the current node is null, you know that you’ve reached the end of the list.
+    return _currentNode != null;
+    }
+  }
+
+  //كدة الايترابل خلص ... هستخدمة عادي داخل اللينكد ليست بتناعتي 
+  Looping Through a List:-
+  ----------------------
+- Now that your iterator is finished, you can use it in your LinkedList. Replace the unimplemented iterator getter that you added earlier to LinkedList with the following:->
+
+class LinkedList<E> extends Iterable<E>{
+  ...... 
+  @override
+  Iterator<E> get iterator => _LinkedListIterator(this);
+  ......
+}
+--------------------------------------------------------------------------------
+Example of implementing Iteration on linkled list :-
+-------------------------------------------------
+final list = LinkedList<int>();
+list.push(3);
+list.push(2);
+list.push(1);
+for (final element in list) {
+  print(element);
+}
+ //output : 
+    1
+    2
+    3
+
+IMPORTANT NOTES :-
+----------------
+1- The Iterable interface only allows iterating through the elements in one direction.
+2- Dart also has a BidirectionalIterator interface for two-way movement. That’s not possible with LinkedList.though, because this data structure also only allows
+   movement in one direction.
+3- Looping through a collection is not the only benefit of implementing Iterable. You now have access to all sorts of methods like where, map, contains, and elementAt.
+   Just keep in mind that these are O(n) operations, though. Even the innocuouslooking length requires iterating through the whole list to calculate.
+
 */
