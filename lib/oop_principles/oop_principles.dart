@@ -20,7 +20,7 @@ the Unified Modeling Language (UML).
 
 4- What Exactly Is a Class?
 --------------------------
-In short, a class is a blueprint for an object.When you instantiate an object, you use a class
+In short, a class is a blueprint for an object When you instantiate an object, you use a class
 as the basis for how the object is built.
 Note :- Classes Are Object Templates.
 
@@ -73,7 +73,7 @@ for example:
 - All classes that inherites from abstract class must implement (override) all abstract methods in that base class.
 - مفهوم الابستراكت كلاس عموما هو اني اعمل منه وراثة واني مقدرش اخد منه اوبجكت
 - One class can inherit from only one class (in many languages as dart becouse it not suppot multiple inheritance)
-9-1- abstract method:- Method without implementation (in dart we decfined abstract methods that the method with no implementation and without abstract keyword).
+9-1- abstract method:- Method without implementation (in dart we decfined abstract methods that the method with ( no implementation and without abstract keyword ) ).
 Example of abstract methods in interface:-
 ----------------------------------------
 //iterface
@@ -89,8 +89,8 @@ abstract class MyCustomInterface{
 - like 100% abstract with all the methods abstract (methods that defined as abstract and have no implementation)
 - الانترفيس هو هو الابستراكت كلاس بس كل الميثودس اللي فيه ابستراكت ومش معول لاي واحدة فيهم امبليمينت .
 - all classes implements the interface must implement (like override) all methods on the interface .
-- all methods are abstract and ca'nt have implementation>
-- classess can implement multiple interfaces>
+- all methods are abstract and ca'nt have implementation.
+- classess can implement multiple interfaces but not extends multiple classes (Multiple inheritance forbidden in dart).
 - Add/Enforce/Describe behaviors to other classess / types.
 - Note :-
 -------- في لغات برمجة مش بتتعدم ال المالتبل انهيرتنس زي الدرات (يعني مقدرش اعمل اكستند لاكتر من اب  )
