@@ -3,7 +3,8 @@
 //2- نضيف الفانكشنز اللي يحتاجها الكلاس فقط ( يشبه اول مفهوم اللي هو Single Responsibility Principle)
 //3- بالعامية كده وليكن عندي كلاسين واحد فيعم يمكنه الدوران والاخر لا وجيت قولت كل الكلاسات تدور هييجي اللي ميعرفش يدور ويقول انا عندي مشكلة في الدوران ومبعرفش ادور ويحصل مشكله .
 //4-هنا ييجي دور ال Interface Segregation Principle بحيث بييجي يقول الكلاسات اللي بتعرف تدور تدور بس فالبتالي فصل كل كلاس بالفنشكنز والقدرات بتاعته عن التاني فكده مش هيحصلي مشكله
-
+//5- Clients should not be forced to depended upon interfaces that they do not use.
+//    - Declaring methods in an interface that the caller dose'nt need pollutes the interface and leads to a "bulky" or "fat" interface.
 //<--------------------------- Before Interface Segregation Principle Implemenetation>
 //
 //

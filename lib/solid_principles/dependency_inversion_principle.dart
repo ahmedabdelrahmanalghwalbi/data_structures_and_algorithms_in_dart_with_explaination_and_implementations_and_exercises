@@ -2,6 +2,7 @@
 //1- high level modules should not depend upon low level modules
 //2-بمعني لو عندي كلاس  وبيقولي انا استطيع قطع الخبار إستخدام قطاعة الخيار الفقط ولا استطيع قطع الخيار الا بها او بشئ اخر فلازم اخليه يقولي اني بعرف اقطع الخيار بأي أداه اجبهاله مش لازم قطاعة خيار زي ما قالي في الاول
 //3- عند تنفيذه في الكود يسمي dependency injection
+//4- Depend upon abstractions,[not] concretions.
 //<------------------------------- Before DIP>
 
 //high level

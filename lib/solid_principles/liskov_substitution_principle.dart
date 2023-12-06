@@ -5,6 +5,9 @@
 //The Liskov Substitution Principle (LSP) states that objects of a superclass should be able to be replaced with objects of a subclass
 //without affecting the correctness of the program. In other words,
 //a subclass should be able to replace its superclass without breaking the code
+//functions that use pointers, or refrences to base classes , must be able to use of derived classes without knowing it.
+//if class A is a subtype of class B , then we should be able to replace B with A without interrupting the behavior of the program.
+//يعني لو عندي انتلرفيس اسمة شيب وفيه ثلاث كلاسس عاملين منه امبليمينت وفيه ميثود اسمها جيت اريا )() فيهم الاربعه فلازم لما انده الميثود بتاعه الجيت اريا getArea() مش لازم اكون معرف معاها نوع الاوبجكت كدة كدة تشتغلي وتجبلي المساحة علطول يعني هتجيب اي مساحة لاي اوبجكت مبعوتلها من غير ميحصل مشاكل .
 
 //-------------------------------------BEFORE LSP
 class UploadFileService {
