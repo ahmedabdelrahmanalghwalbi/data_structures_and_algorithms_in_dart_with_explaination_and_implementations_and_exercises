@@ -78,3 +78,33 @@ void main() {
 }
 //فبكدة قدرت اخلي فيه وسيط ما بين الهاي ليفل و اللو ليفل من خلال ابستراكت كلاس ولما بعوز استخدم حاجة معينه بعملها انجيكت داخل الوسيط اللي هو الابستركت كلاس 
 //من امثلتها وليكن بستخدم عندي اكتر من سيرفيس بروفايدر عشان ابعت او تو بي وليكن عندي فايربيس ويوني فونيك فبحاول اطبق عليهم نفس المفهوم
+/*
+How does this code violate the Dependency Inversion Principle?
+ class PizzaShop {
+    getPayment() {}
+    deliverPizza() {}
+}
+ class Customer {
+ makePayment() {} 
+ receivePizza() {}
+}
+class Delivery {
+constructor(customer: Customer, pizzaShop: PizzaShop) { }
+deliver() {
+customer.makePayment
+coffeeShop.getPayment
+coffeeShop.deliverCoffee
+customer.receiveCoffee
+}
+}    ? 
+The provided code violates the Dependency Inversion Principle (DIP). The DIP states that high-level modules should not 
+depend on low-level modules, and both should depend on abstractions. Additionally, abstractions should not depend on details;
+rather, details should depend on abstractions.In the given code, the Delivery class is directly dependent on the Customer and
+PizzaShop classes, which are both concrete, low-level modules. This violates the DIP because the Delivery class should not
+depend directly on these concrete classes.
+To adhere to the Dependency Inversion Principle, you should introduce abstractions for the Customer and PizzaShop classes
+and have the Delivery class depend on these abstractions rather than the concrete implementations.
+This way, the Delivery class would be decoupled from the specific implementations of Customer and PizzaShop,
+allowing for more flexibility, easier maintenance, and better adherence to the DIP.
+
+ */

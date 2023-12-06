@@ -51,3 +51,33 @@ class SinorEmployee extends EmployeeInterface {
     return (salary * 7);
   }
 }
+
+//How does this code violate OCP? (Open-Closed Principle)
+/*
+class PizzaShop {
+  constructor(name: string, address: Address){ }
+  getName() { }
+  getAddress() { }
+} 
+class InvoiceService {
+  generateInvoice(shop: MusicShop): String{
+  let invoice = "";
+  if(company instanceOf A)
+  invoice = "format of invoice for A";
+  if(company instanceOf B)
+  invoice = "format of invoice for B";
+  if(company instanceOf C)
+  invoice = "format of invoice for C";
+  return invoice;
+  }
+}
+The provided code violates the Open-Closed Principle (OCP) because the InvoiceService class is not closed for modification.
+The OCP states that classes should be open for extension but closed for modification.
+In the generateInvoice method of the InvoiceService class, the conditional statements check the type of company (A, B, or C)
+and generate the invoice format accordingly. This violates the OCP because if a new type of company
+(for example, company type D) is introduced, the InvoiceService class would need to be modified to accommodate the new company
+ type.
+To adhere to the OCP, you could use polymorphism and create separate invoice format classes for each company type.
+Then, you could use inheritance or composition to have the InvoiceService class work with these different format classes
+without needing to modify the InvoiceService class itself when a new company type is introduced.
+*/
