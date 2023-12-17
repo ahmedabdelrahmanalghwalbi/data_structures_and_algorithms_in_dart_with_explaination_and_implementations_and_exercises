@@ -121,5 +121,89 @@ abstract class MyCustomInterface{
 ---------------
 11-1- abstraction is hiding details for whom should not know , or don't care, about (or) Make only required details to be publicly available>
 
+12- Mixins and (with) keyword :-
+-------------------------------
+1-Mixin :-  Mixins are a way to reuse a set of methods from one or more 
+   classes without using inheritance. A mixin is a class that provides methods and instance variables and can be "mixed in" to 
+   another class to provide that functionality.
+2- with :- The with keyword in Dart is used to implement mixins.
 
+mixin Performer {
+  void perform() {
+    print("Performing on stage");
+  }
+}
+
+class Musician with Performer {
+  // Other class members
+}
+
+--In this example, the Musician class uses the with keyword to mix in the functionality defined in the Performer mixin.
+
+
+
+13- whats is Mixins and the different between it and concrete class and why and when we using mixins :-
+-----------------------------------------------------------------------------------------------------
+- A concrete class in Dart is a class that can be instantiated directly, and it can provide both state (variables) and behavior (methods).
+  On the other hand, a mixin is a way to modularize and reuse code in Dart, allowing you to define a set of methods that can be "mixed in" to other classes
+
+Here are the key differences between a concrete class and a mixin:
+-----------------------------------------------------------------
+Concrete Class:
+--------------
+ - A concrete class can be instantiated on its own to create objects.
+ - It can have its own state (fields) and behavior (methods).
+ - Concrete classes are used to create objects that have attributes and behavior specific to that class.
+
+Example of a concrete class:
+---------------------------
+class Animal {
+  String name;
+
+  Animal(this.name);
+
+  void makeSound() {
+    print("Some generic sound");
+  }
+}
+
+Mixin:
+------
+- A mixin is a way to encapsulate and provide a set of methods that can be combined with other classes.
+- Mixins cannot be instantiated on their own; they are meant to be mixed into other classes that provide the required state.
+- They are used to share functionality across different classes without using traditional inheritance.
+
+Example of Mixin :-
+-----------------
+mixin Performer {
+  void perform() {
+    print("Performing on stage");
+  }
+}
+class Musician with Performer {
+  String instrument;
+
+  Musician(this.instrument);
+  
+  // Other class members
+}
+
+Why Use Mixins?
+---------------
+- Mixins are valuable for code reuse and for providing a way to avoid deep inheritance hierarchies. They offer the following advantages:
+- Code Reusability: Mixins allow you to define a set of methods once and reuse them across multiple classes, promoting code reusability and maintainability.
+- Avoiding Multiple Inheritance: Unlike some other programming languages, Dart doesn't support multiple inheritance. Mixins provide a way to include functionality from multiple sources without the complexity of multiple inheritance.
+- Separation of Concerns: Mixins help in separating different concerns and organizing code in a modular way, making it easier to manage and understand.
+- Promoting Flexibility: By using mixins, you can add functionality to a class without forcing it to inherit from a specific superclass, promoting more flexible code designs.
+
+-In summary, while a concrete class represents a complete unit with its own state and behavior, a mixin in Dart offers a means of modularizing
+ and reusing functionality across different classes, promoting code reusability, separation of concerns, and flexibility in your codebase.
+
+
+14- Summary (extends , with , implements) :-
+-----------------------------------------
+extends :- is used for inheritance, allowing a subclass to inherit from a superclass.
+with :- is used for mixins, allowing a class to include functionality from a mixin without inheritance.
+implements :- is used to declare that a class supports a certain interface, promising to provide implementations 
+              for the methods declared in the interface.
  */
