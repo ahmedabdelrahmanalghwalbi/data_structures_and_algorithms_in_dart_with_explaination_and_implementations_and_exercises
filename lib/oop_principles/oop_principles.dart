@@ -12,6 +12,26 @@ The concept of getters and setters supports the concept of data hiding. Because 
 should not directly manipulate data within another object, the getters and setters provide
 controlled access to an object’s data. Getters and setters are sometimes called
 accessor methods and mutator methods, respectively.
+- we use getters as a shortcuts
+- we can adding return types to getters but it is not required 
+we can do this :-
+  1- Adding return types (not required)
+  -------------------------------------
+//Add Data to Stream
+Function(String) get changeEmail => emailController.sink.add;
+Function(String) get chnagePassword => passwordController.sink.add;
+//Retrive Data From Stream
+Stream<String> get email => emailController.stream;
+Stream<String> get password => passwordController.stream;
+  2- using getters without using return types
+  -------------------------------------------
+//Add Data to Stream
+get changeEmail => emailController.sink.add;
+get chnagePassword => passwordController.sink.add;
+//Retrive Data From Stream
+get email => emailController.stream;
+get password => passwordController.stream;
+
 
 3- Modeling Tools :-
 ------------------
